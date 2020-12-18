@@ -34,5 +34,5 @@ class Config(object):
     # set timeout for subprocess
     PROCESS_MAX_TIMEOUT = 3600
     # watermark file
-    DEF_WATER_MARK_FILE = "Renamed by @renamer_ns_bot"
+    DEF_WATER_MARK_FILE = "Renamed by @Ts_Bots"
 
