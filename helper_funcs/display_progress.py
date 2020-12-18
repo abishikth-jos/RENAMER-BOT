@@ -74,7 +74,7 @@ def humanbytes(size):
         return ""
     power = 2**10
     n = 0
-    Dic_powerN = {0: ' ', 1: 'K', 2: 'M', 3: 'G', 4: 'T'}
+    Dic_powerN = {0: ' ', 1: 'Ki', 2: 'Mi', 3: 'G', 4: 'Ti'}
     while size > power:
         size /= power
         n += 1
