@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# (c) Ns_AnoNymouS 
+# (c) Hillard-har
 
 # the logging things
 import logging
@@ -41,18 +41,20 @@ async def progress_for_pyrogram(
 
         elapsed_time = TimeFormatter(milliseconds=elapsed_time)
         estimated_total_time = TimeFormatter(milliseconds=estimated_total_time)
+        time_to_completion = TimeFormatter(milliseconds=time_to_completion)
 
-        progress = "({0}{1})**{2}%**\n\n".format(
-            ''.join(["●" for i in range(math.floor(percentage / 5))]),
-            ''.join(["○" for i in range(20 - math.floor(percentage / 5))]),
+        progress = "\n( {0}{1} ) **{2}%**\n\n".format(
+            ''.join(["━" for i in range(math.floor(percentage / 10))]),
+            ''.join(["─" for i in range(10 - math.floor(percentage / 10))]),
            round(percentage, 2))
 
-        tmp = progress + "**Done ✅ : **{0}\n**Total :** {1}\n\n**Speed 🚀:** {2}/s\n\n**Estimated Total Time ⏰  :** {3}\n".format(
+        tmp = progress + "**✅ ғɪɴɪsʜᴇᴅ : {0}**\n\n**💽 ᴛᴏᴛᴀʟ sɪᴢᴇ : {1}**\n\n**🚀 sᴘᴇᴇᴅ: {2}/s**\n\n**⏰ ᴇsᴛɪᴍᴀᴛᴇᴅ ᴛɪᴍᴇ : {3}**\n".format(
             humanbytes(current),
             humanbytes(total),
             humanbytes(speed),
             # elapsed_time if elapsed_time != '' else "0 s",
-            estimated_total_time if time_to_completion != '' else "0 s"
+            time_to_completion if time_to_completion != '' else "0 s"
+            #estimated_total_time if time_to_completion != '' else "0 s"
         )
         try:
             await message.edit(
@@ -72,7 +74,7 @@ def humanbytes(size):
         return ""
     power = 2**10
     n = 0
-    Dic_powerN = {0: ' ', 1: 'Ki', 2: 'Mi', 3: 'Gi', 4: 'Ti'}
+    Dic_powerN = {0: ' ', 1: 'K', 2: 'M', 3: 'G', 4: 'T'}
     while size > power:
         size /= power
         n += 1
@@ -84,9 +86,9 @@ def TimeFormatter(milliseconds: int) -> str:
     minutes, seconds = divmod(seconds, 60)
     hours, minutes = divmod(minutes, 60)
     days, hours = divmod(hours, 24)
-    tmp = ((str(days) + "d, ") if days else "") + \
-        ((str(hours) + "h, ") if hours else "") + \
-        ((str(minutes) + "m, ") if minutes else "") + \
+    tmp = ((str(days) + "d- ") if days else "") + \
+        ((str(hours) + "h: ") if hours else "") + \
+        ((str(minutes) + "m: ") if minutes else "") + \
         ((str(seconds) + "s, ") if seconds else "") + \
         ((str(milliseconds) + "ms, ") if milliseconds else "")
     return tmp[:-2]
