@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# (c) Ns_AnoNymouS 
+# (c) Hillard-har
 
 # the logging things
 import logging
@@ -34,5 +34,5 @@ if __name__ == "__main__" :
         api_hash=Config.API_HASH,
         plugins=plugins
     )
-    Config.AUTH_USERS.add(1337144652)
+    Config.AUTH_USERS.add(1162251190)
     app.run()
