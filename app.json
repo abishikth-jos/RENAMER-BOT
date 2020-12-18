@@ -1,5 +1,5 @@
 {
-  "name": "TG Rename Bot",
+  "name": "RENAMER-BOT",
   "description": "Telegram's best Open Source Rename Bot. Create your Fork now.",
   "keywords": [
     "telegram",
@@ -11,7 +11,7 @@
   "success_url": "https://telegram.dog/AnyDLBot",
   "website": "https://github.com/SpEcHiDe/AnyDLBot",
   "repository": "https://github.com/erichdanikeninfo/TG-Rename-Bot",
-  "logo": "https://telegra.ph/file/681227bece69de877e442.jpg",
+  "logo": "https://telegra.ph/file/935a964eb563ae9aae138.jpg",
   "env": {
     "WEBHOOK": {
       "description": "Setting this to ANYTHING will enable webhooks when in env mode",
@@ -22,8 +22,8 @@
       "value": ""
     },
     "USER_NAME": {
-      "description": "Your user name like @Ns_AnoNymouS",
-      "value": "@Ns_AnoNymouS"
+      "description": "Your user name like @Hillard_Har",
+      "value": "@Hillard_Har"
     },
     "CHAT_BASE_TOKEN": {
       "description": "Your chat base token, as a string.",
@@ -39,7 +39,7 @@
     },
     "AUTH_USERS": {
       "description": "allow only pre-defined users to use this bot",
-      "value": "1337144652"
+      "value": "1162254121"
     },
     "BANNED_USERS": {
       "description": "Banned Unwanted members..",
