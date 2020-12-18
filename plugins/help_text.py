@@ -59,6 +59,7 @@ async def start(bot, update):
         chat_id=update.chat.id,
         text=Translation.START_TEXT.format(update.from_user.first_name, Config.USER_NAME), 
         parse_mode="html",
+        disable_web_page_preview=True,
         #reply_to_message_id=update.message_id
         reply_markup=InlineKeyboardMarkup(
         [
@@ -100,5 +101,6 @@ async def about(bot, update):
         chat_id=update.chat.id,
         text=Translation.About.format(update.from_user.first_name),
         parse_mode="markdown",
+        disable_web_page_preview=True,
         reply_to_message_id=update.message_id
     )
