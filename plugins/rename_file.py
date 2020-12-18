@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# (c) Ns_AnoNymouS 
+# (c) Hillard-har
 
 # the logging things
 import logging
