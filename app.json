@@ -19,27 +19,27 @@
     },
     "TG_BOT_TOKEN": {
       "description": "Your bot token, as a string.",
-      "value": ""
+      "value": "1773518993:AAEVLISPujhXzmdg2lLyJ3mpiHVK5SZmRWs"
     },
     "USER_NAME": {
       "description": "Your user name like @Hillard_Har",
-      "value": "@Hillard_Har"
+      "value": "@Deeks_04_8"
     },
     "CHAT_BASE_TOKEN": {
       "description": "Your chat base token, as a string.",
-      "value": ""
+      "value": "441cc55c-2c13-44e5-b47c-b960a137fd95"
     },
     "APP_ID": {
       "description": "Get this value from https://my.telegram.org",
-      "value": ""
+      "value": "2980496"
     },
     "API_HASH": {
       "description": "Get this value from https://my.telegram.org",
-      "value": ""
+      "value": "9415a61fedcc0f00f33667ca46e577a3"
     },
     "AUTH_USERS": {
       "description": "allow only pre-defined users to use this bot",
-      "value": "1162254121"
+      "value": "1086432320"
     },
     "BANNED_USERS": {
       "description": "Banned Unwanted members..",
