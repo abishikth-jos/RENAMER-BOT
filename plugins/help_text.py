@@ -66,13 +66,14 @@ def upgrade(bot, update):
         disable_web_page_preview=True
     )
 
-@pyrogram.Client.on_message(pyrogram.Filters.command(["about"]))
+@pyrogram.Client.on_message(filters.command(["about"]))
 async def about(bot, update):
     await bot.send_message(
         chat_id=update.chat.id,
         text=script.ABOUT_TEXT,
         parse_mode="markdown",
-        reply_to_message_id=update.message_id
+        reply_to_message_id=update.message_id, 
+        disable_web_page_preview = True    
     )
 
 
