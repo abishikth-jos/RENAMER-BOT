@@ -50,7 +50,8 @@ def send_start(bot, update):
         text=script.START_TEXT.format(update.from_user.first_name),
         parse_mode="markdown",
         disable_web_page_preview=True,
-        reply_to_message_id=update.message_id
+        reply_to_message_id=update.message_id, 
+        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="😇 DEVELOPER", url="https://t.me/Trackstudio")]])
     )
 
 
@@ -73,7 +74,8 @@ async def about(bot, update):
         text=script.ABOUT_TEXT,
         parse_mode="markdown",
         reply_to_message_id=update.message_id, 
-        disable_web_page_preview = True    
+        disable_web_page_preview = True, 
+        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="😇 DEVELOPER", url="https://t.me/Trackstudio")]])  
     )
 
 
