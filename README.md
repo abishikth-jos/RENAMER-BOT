@@ -7,7 +7,7 @@ An Open Source Rename Telegram RoBot
 
 **My Feature**:
 
-👉 Rename any Telegram Files with Custom Thumbnail Support and upload as file or video
+👉 Rename any Telegram Files with Permenant Thumbnail Support and upload as file
 
 ### Installation
 
@@ -20,13 +20,14 @@ An Open Source Rename Telegram RoBot
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://www.heroku.com/deploy?template=https://github.com/Hillard-har/RENAMER-BOT/tree/master)
 
 ## Available BotFather commands
+
 ```
 start - to check whether bot is alive 
-rename - (long press) and send the name of the new file.extension for uploading as file
-rename_video - (long press) and send the name of the new file.extension for upload as video
-donate - please donate me
 help - to know how to use me
 about - to know about me
+donate - please donate me
+showthumb - shows you the permenantly saved thumbnail
+delthumb - to delete the saved thumbnail 
 ```
 
 #### The Hard Way
