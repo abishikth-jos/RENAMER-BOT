@@ -23,7 +23,7 @@ from script import script
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, ForceReply
 
-from plugins.helpers import progress_for_pyrogram
+from helper_funcs.display_progress import progress_for_pyrogram
 
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
