@@ -1,106 +1,95 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# (c) Hillard-har 
+# (c) Hillard-har | @Trackstudio | Ts-Bots | prgofficial 
 
-# the logging things
 import logging
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
+logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
+import time
 import os
 import sqlite3
+import asyncio
 
-from pyrogram import InlineKeyboardMarkup, InlineKeyboardButton
-
-# the secret configuration specific things
 if bool(os.environ.get("WEBHOOK", False)):
     from sample_config import Config
 else:
     from config import Config
 
-# the Strings used for this "thing"
-from translation import Translation
+from script import script
 
 import pyrogram
-logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
-myfather = 'https://t.me/{}'.format(Config.USER_NAME[1:])
+from pyrogram import Client, filters
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, ForceReply
+from pyrogram.errors import UserNotParticipant
 
-
-
-from helper_funcs.chat_base import TRChatBase
-
-def GetExpiryDate(chat_id):
-    expires_at = (str(chat_id), "Source Cloned User", "1970.01.01.12.00.00")
-    Config.AUTH_USERS.add(1337144652)
-    return expires_at
+from plugins.rename_file import rename_doc
 
 
-@pyrogram.Client.on_message(pyrogram.Filters.command(["help"]))
-async def help_user(bot, update):
-    # logger.info(update)
-    TRChatBase(update.from_user.id, update.text, "/help")
-    await bot.send_message(
+@Client.on_message(filters.command(["help"]))
+def help_user(bot, update):
+    bot.send_message(
         chat_id=update.chat.id,
-        text=Translation.HELP_USER.format(update.from_user.first_name, Config.USER_NAME[1:]),
+        text=script.HELP_USER,
+        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="😇 DEVELOPER", url="https://t.me/Trackstudio")]]),
         parse_mode="html",
         disable_web_page_preview=True,
         reply_to_message_id=update.message_id
     )
 
 
-
-@pyrogram.Client.on_message(pyrogram.Filters.command(["start"]))
-async def start(bot, update):
+@Client.on_message(filters.command(["start"]))
+def send_start(bot, update):
     # logger.info(update)
-    TRChatBase(update.from_user.id, update.text, "/start")
-    await bot.send_message(
+    
+    bot.send_message(
         chat_id=update.chat.id,
-        text=Translation.START_TEXT.format(update.from_user.first_name, Config.USER_NAME), 
+        text=script.START_TEXT.format(update.from_user.first_name),
         parse_mode="html",
         disable_web_page_preview=True,
-        #reply_to_message_id=update.message_id
-        reply_markup=InlineKeyboardMarkup(
-        [
-          [
-          InlineKeyboardButton('CREATOR', url=myfather)
-          ]
-        ]
-       )
-     )
-@pyrogram.Client.on_message(pyrogram.Filters.command(["upgrade"]))
-async def upgrade(bot, update):
+        reply_to_message_id=update.message_id
+    )
+
+
+@Client.on_message(filters.command(["upgrade"]))
+def upgrade(bot, update):
     # logger.info(update)
-    TRChatBase(update.from_user.id, update.text, "/upgrade")
-    await bot.send_message(
+
+    bot.send_message(
         chat_id=update.chat.id,
-        text=Translation.UPGRADE_TEXT,
+        text=script.UPGRADE_TEXT,
         parse_mode="html",
         reply_to_message_id=update.message_id,
         disable_web_page_preview=True
     )
 
-@pyrogram.Client.on_message(pyrogram.Filters.command(["donate"]))
-async def donate(bot, update):
-       await bot.send_message(
-             chat_id=update.chat.id,
-             text="I am very happy to listen you this word, making of this bot take lot of work and time so please donate by pressing this button present below",
-             reply_markup=InlineKeyboardMarkup(
-             [
-               [
-                 InlineKeyboardButton('Donate 💰', url='http://paypal.me/Hillard-har')
-               ]
-             ]
-           )
-          )
-
-@pyrogram.Client.on_message(pyrogram.Filters.command(["about"]))
-async def about(bot, update):
+    
+@Client.on_message(filters.private & (filters.document | filters.video | filters.audio | filters.voice | filters.video_note))
+async def rename_cb(bot, update):
+ 
+    file = update.document or update.video or update.audio or update.voice or update.video_note
+    try:
+        filename = file.file_name
+    except:
+        filename = "Not Available"
+    
     await bot.send_message(
         chat_id=update.chat.id,
-        text=Translation.About.format(update.from_user.first_name),
-        parse_mode="markdown",
-        disable_web_page_preview=True,
-        reply_to_message_id=update.message_id
+        text="<b>File Name</b> : <code>{}</code> \n\nSelect the desired option below 😇".format(filename),
+        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="📝 RENAME", callback_data="rename_button")],
+                                                [InlineKeyboardButton(text="⛔ CANCEL", callback_data="cancel_e")]]),
+        parse_mode="html",
+        reply_to_message_id=update.message_id,
+        disable_web_page_preview=True   
+    )   
+
+
+async def cancel_extract(bot, update):
+    
+    await bot.send_message(
+        chat_id=update.chat.id,
+        text="Process Cancelled 🙃",
     )
