@@ -1,6 +1,6 @@
 {
   "name": "RENAMER-BOT",
-  "description": "Telegram's best Open Source Rename Bot. Create your Fork now.",
+  "description": "Telegram's best Open Source Rename Bot with perm thumbnail support. Create your Fork now.",
   "keywords": [
     "telegram",
     "best",
@@ -8,10 +8,9 @@
     "source",
     "Rename"
   ],
-  "success_url": "https://telegram.dog/AnyDLBot",
-  "website": "https://github.com/SpEcHiDe/AnyDLBot",
-  "repository": "https://github.com/erichdanikeninfo/TG-Rename-Bot",
-  "logo": "https://telegra.ph/file/1350ea729b6b0999faa1a.jpg",
+  "success_url": "https://github.com/Hillard-har/RENAMER-BOT",
+  "website": "https://github.com/Ts-Bots",
+  "repository": "https://github.com/Hillard-har/RENAMER-BOT",
   "env": {
     "WEBHOOK": {
       "description": "Setting this to ANYTHING will enable webhooks when in env mode",
@@ -19,14 +18,6 @@
     },
     "TG_BOT_TOKEN": {
       "description": "Your bot token, as a string.",
-      "value": ""
-    },
-    "USER_NAME": {
-      "description": "Your user name like @Hillard_Har",
-      "value": "@Hillard_Har"
-    },
-    "CHAT_BASE_TOKEN": {
-      "description": "Your chat base token, as a string.",
       "value": ""
     },
     "APP_ID": {
@@ -39,16 +30,11 @@
     },
     "AUTH_USERS": {
       "description": "allow only pre-defined users to use this bot",
-      "value": "1162254121"
+      "value": ""
     },
     "BANNED_USERS": {
       "description": "Banned Unwanted members..",
       "value": "",
-      "required": false
-    },
-    "CHUNK_SIZE": {
-      "description": "chunk size that should be used with requests",
-      "value": "128",
       "required": false
     }
   },
@@ -61,8 +47,6 @@
     }
   ],
   "buildpacks": [{
-    "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
-  }, {
     "url": "heroku/python"
   }],
   "formation": {
