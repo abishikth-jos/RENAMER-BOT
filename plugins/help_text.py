@@ -48,7 +48,7 @@ def send_start(bot, update):
     bot.send_message(
         chat_id=update.chat.id,
         text=script.START_TEXT.format(update.from_user.first_name),
-        parse_mode="html",
+        parse_mode="markdown",
         disable_web_page_preview=True,
         reply_to_message_id=update.message_id
     )
@@ -65,6 +65,16 @@ def upgrade(bot, update):
         reply_to_message_id=update.message_id,
         disable_web_page_preview=True
     )
+
+@pyrogram.Client.on_message(pyrogram.Filters.command(["about"]))
+async def about(bot, update):
+    await bot.send_message(
+        chat_id=update.chat.id,
+        text=script.ABOUT_TEXT,
+        parse_mode="markdown",
+        reply_to_message_id=update.message_id
+    )
+
 
     
 @Client.on_message(filters.private & (filters.document | filters.video | filters.audio | filters.voice | filters.video_note))
