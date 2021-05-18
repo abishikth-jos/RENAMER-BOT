@@ -39,7 +39,7 @@ Send me any Telegram file and choose appropriate option!
 
 3. Choose appropriate option
 
-4. Send the new file when bit asks 
+4. Send the new file when bot asks 
 
 
 <b>By @Ts_Bots</b>
