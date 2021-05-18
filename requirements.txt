@@ -1,9 +1,10 @@
 aiohttp
 beautifulsoup4
-git+git://github.com/google/chatbase-python.git
 hachoir
 numpy
 Pillow
-https://github.com/Hillard-har/pyrogram/blob/main/pyrogram-asyncio-dev.zip?raw=true
+pyrogram==1.0.7
 requests
 tgcrypto
+sqlalchemy==1.3.23
+psycopg2-binary
