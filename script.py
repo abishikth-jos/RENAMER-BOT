@@ -42,7 +42,7 @@ Send me any Telegram file and choose appropriate option!
 4. Send the new file when bit asks 
 
 
-By @Ts_Bots
+<b>By @Ts_Bots</b>
 """
 
     ABOUT_TEXT = """
