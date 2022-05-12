@@ -17,7 +17,7 @@ An Open Source Rename Telegram RoBot
 
 ### You can also tap the Deploy To Heroku button below to deploy straight to Heroku!
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://www.heroku.com/deploy?template=https://github.com/Hillard-har/RENAMER-BOT/tree/master)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://www.heroku.com/deploy?template=https://github.com/abishikth-jos/RENAMER-BOT/tree/master)
 
 ## Available BotFather commands
 
@@ -41,7 +41,7 @@ cp sample_config.py config.py
 python bot.py
 ```
 
-- For FeedBack and Suggestions, please feel free to say in [@TS_BOTS](https://telegram.dog/ts_bots)
+- For FeedBack and Suggestions, please feel free to say in [@Ts_Bots](https://telegram.dog/ts_bots)
 
 #### LICENSE
 - GPLv3
